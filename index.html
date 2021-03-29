@@ -97,6 +97,7 @@
                     }
                 },
                 rot: {
+                    //  从世界坐标系旋转到相机坐标系的三维坐标变换
                     x: function (p, rot) {
                         return {
                             x: p.x,
@@ -128,6 +129,7 @@
                 }
             },
             pov: {
+                //  相机空间变换引起的坐标系变换
                 plane: function (p) {
                     return {
                         x: p.x * cam.ang.cplane + p.z * cam.ang.splane,
@@ -152,6 +154,7 @@
             },
             persp: function (p) {
                 return {
+                    //  z轴的投影到xy平面的投影变换
                     x: p.x * cam.dist.z / p.z * cam.zoom,
                     y: p.y * cam.dist.z / p.z * cam.zoom,
                     z: p.z * cam.zoom,
@@ -275,12 +278,15 @@
 
             Build.prototype.draw = function () {
                 this.$.clearRect(0, 0, this.canvas.width, this.canvas.height)
+
                 cam.upd()
+
                 this.rotObj.x += 0.1
                 this.rotObj.y += 0.1
                 this.rotObj.z += 0.1
 
                 for (var i = 0; i < this.varr.length; i++) {
+                    // calc x y z += 0.04  if > 360 = 0
                     for (var val in this.calc[i]) {
                         if (this.calc[i].hasOwnProperty(val)) {
                             this.calc[i][val] += this.vel
