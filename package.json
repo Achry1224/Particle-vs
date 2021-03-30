@@ -1,0 +1,23 @@
+{
+  "name": "particle-vs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Achry1224/Particle-vs.git"
+  },
+  "author": "Achry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Achry1224/Particle-vs/issues"
+  },
+  "homepage": "https://github.com/Achry1224/Particle-vs#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify": "^3.1.0"
+  }
+}
